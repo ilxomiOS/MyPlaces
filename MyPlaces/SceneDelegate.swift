@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MyPlaces
-//
-//  Created by Ilxom on 14/09/22.
-//
 
 import UIKit
 
