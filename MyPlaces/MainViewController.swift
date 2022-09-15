@@ -31,6 +31,13 @@ class MainViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let place = places[indexPath.row]
+        StorageManager.deleteObject(place)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         newPlaceVC.saveNewPlace()
